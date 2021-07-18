@@ -1,6 +1,7 @@
 <template>
   <div class="todo-card">
-    <span>{{ todo.title }}</span>
+    <h2>Task: {{ todo.title }}</h2>
+    <h3>Details: {{ todo.description }}</h3>
     <h3>Created at: {{ todo.time }} on {{ todo.date }}</h3>
   </div>
 </template>
@@ -8,22 +9,8 @@
 <script>
 export default {
   name: "TodoCard",
-  // props: {
-  //   msg: String,
-  // },
-  data() {
-    return {
-      todo: {
-        id: 123,
-        category: "work",
-        title: "Create a vue app",
-        description: "an app to track things I need to do",
-        location: "my laptop",
-        date: "18/07/2021",
-        time: "9:00",
-        creator: "Jack Shields",
-      },
-    };
+  props: {
+    todo: Object,
   },
 };
 </script>
@@ -34,5 +21,13 @@ export default {
   width: 250px;
   border: 2px solid blue;
   margin-bottom: 20px;
+}
+.todo-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  font-weight: 30;
 }
 </style>
