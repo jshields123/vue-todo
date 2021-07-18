@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="todos">
     <TodoCard v-for="todo in todos" :key="todo.id" :todo="todo" />
   </div>
 </template>
@@ -43,4 +43,9 @@ export default {
 </script>
 
 <style scoped>
+.todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>
