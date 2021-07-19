@@ -10,7 +10,7 @@
 import TodoCard from "@/components/TodoCard.vue";
 
 export default {
-  name: "Home",
+  name: "TodoList",
   components: {
     TodoCard,
   },
