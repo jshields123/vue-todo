@@ -12,5 +12,8 @@ const mainAPICall = axios.create({
 export default {
     getTodos(){
         return mainAPICall.get('/todos')
+    },
+    getTodo(id){
+        return mainAPICall.get('/todos/' + id)
     }
 }

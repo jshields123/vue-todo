@@ -1,9 +1,11 @@
 <template>
-  <div class="todo-card">
-    <h2>Task: {{ todo.title }}</h2>
-    <h3>Details: {{ todo.description }}</h3>
-    <h3>Created at: {{ todo.time }} on {{ todo.date }}</h3>
-  </div>
+  <router-link to="/todo/123">
+    <div class="todo-card">
+      <h2>Task: {{ todo.title }}</h2>
+      <h3>Details: {{ todo.description }}</h3>
+      <h3>Created at: {{ todo.time }} on {{ todo.date }}</h3>
+    </div>
+  </router-link>
 </template>
 
 <script>
