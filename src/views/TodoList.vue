@@ -8,6 +8,7 @@
 <script>
 // @ is an alias to /src
 import TodoCard from "@/components/TodoCard.vue";
+import axios from "axios";
 
 export default {
   name: "TodoList",
@@ -16,29 +17,14 @@ export default {
   },
   data() {
     return {
-      todos: [
-        {
-          id: 123,
-          category: "work",
-          title: "Create a vue app",
-          description: "An app to track things I need to do",
-          location: "my laptop",
-          date: "18/07/2021",
-          time: "9:00",
-          creator: "Jack Shields",
-        },
-        {
-          id: 124,
-          category: "exercise",
-          title: "Run",
-          description: "A run to the top of gladstone park, round and back",
-          location: "Flat to Gladstone park",
-          date: "19/07/2021",
-          time: "14:00",
-          creator: "Jack Shields",
-        },
-      ],
+      todos: null,
     };
+  },
+  created() {
+    axios
+      .get("https://my-json-server.typicode.com/jshields123/json-server/todos")
+      .then((response) => (this.todos = response.data))
+      .catch((error) => console.log(error));
   },
 };
 </script>
