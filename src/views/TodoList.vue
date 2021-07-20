@@ -8,7 +8,7 @@
 <script>
 // @ is an alias to /src
 import TodoCard from "@/components/TodoCard.vue";
-import axios from "axios";
+import TodoService from "@/services/TodoService.js";
 
 export default {
   name: "TodoList",
@@ -21,8 +21,7 @@ export default {
     };
   },
   created() {
-    axios
-      .get("https://my-json-server.typicode.com/jshields123/json-server/todos")
+    TodoService.getTodos()
       .then((response) => (this.todos = response.data))
       .catch((error) => console.log(error));
   },
