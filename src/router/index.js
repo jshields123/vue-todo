@@ -10,8 +10,9 @@ const routes = [
     component: TodoList,
   },
   {
-    path: "/todo/123",
+    path: "/todo/:id",
     name: "TodoDetails",
+    props: true,
     component: TodoDetails,
   },
   {

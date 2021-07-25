@@ -1,5 +1,8 @@
 <template>
-  <router-link to="/todo/123">
+  <router-link
+    class="todo-link"
+    :to="{ name: 'TodoDetails', params: { id: todo.id } }"
+  >
     <div class="todo-card">
       <h2>Task: {{ todo.title }}</h2>
       <h3>Details: {{ todo.description }}</h3>
@@ -27,6 +30,11 @@ export default {
 .todo-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.todo-link {
+  text-decoration: none;
+  color: black;
 }
 
 h3 {

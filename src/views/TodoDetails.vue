@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="todo">
     <h1>{{ todo.title }}</h1>
     <p>{{ todo.time }} {{ todo.date }} at {{ todo.location }}</p>
     <p>Details: {{ todo.description }}</p>
@@ -11,10 +11,10 @@
 import TodoService from "@/services/TodoService.js";
 
 export default {
+  props: ["id"],
   data() {
     return {
       todo: null,
-      id: 123,
     };
   },
   created() {
