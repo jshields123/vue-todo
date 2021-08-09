@@ -2,12 +2,19 @@ import { createRouter, createWebHistory } from "vue-router";
 import TodoList from "../views/TodoList.vue";
 import TodoDetails from '../views/TodoDetails.vue'
 import About from '../views/About.vue'
+import BaseInput from '../views/Form.vue'
 
 const routes = [
   {
     path: "/",
     name: "TodoList",
     component: TodoList,
+  },
+  {
+    path: "/todo/create",
+    name: "Form",
+    props: true,
+    component: BaseInput,
   },
   {
     path: "/todo/:id",

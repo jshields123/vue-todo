@@ -1,8 +1,9 @@
 <template>
   <div>
-    <label>{{ label }}</label>
+    <label v-if="label">{{ label }}</label>
 
     <input
+      v-bind="$attrs"
       :placeholder="label"
       class="field"
       :value="modelValue"
